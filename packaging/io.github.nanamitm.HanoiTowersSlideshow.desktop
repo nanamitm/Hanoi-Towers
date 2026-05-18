@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=Hanoi Towers Slideshow
+Comment=Show the shortest Tower of Hanoi solution as a slideshow
+Exec=HanoiTowersSlideshow
+Icon=hanoi-towers
+Categories=Education;Utility;
+Terminal=false

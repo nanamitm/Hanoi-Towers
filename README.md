@@ -43,6 +43,22 @@ If your Qt installation is elsewhere, edit `build.ps1` and `run.ps1`.
 .\run.ps1
 ```
 
+## Release Builds
+
+GitHub Actions can build release artifacts for:
+
+- Windows x64 zip
+- Linux x86_64 AppImage
+
+Run the `Release` workflow manually from GitHub Actions, or push a version tag:
+
+```powershell
+git tag v0.1.0
+git push origin v0.1.0
+```
+
+ARM64 release artifacts are intentionally left out for now.
+
 ## Manual CMake Build
 
 ```powershell
