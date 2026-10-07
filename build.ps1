@@ -14,5 +14,11 @@ $buildDir = Join-Path $PSScriptRoot 'build-qt'
     -DCMAKE_MAKE_PROGRAM="$ninja" `
     -DCMAKE_CXX_COMPILER="$mingwBin\g++.exe" `
     -DCMAKE_PREFIX_PATH="$qtRoot"
+if ($LASTEXITCODE -ne 0) {
+    throw "CMake configure failed (exit code $LASTEXITCODE)."
+}
 
 & $cmake --build $buildDir
+if ($LASTEXITCODE -ne 0) {
+    throw "CMake build failed (exit code $LASTEXITCODE)."
+}
