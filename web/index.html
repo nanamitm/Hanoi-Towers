@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Watch the shortest solution to the Tower of Hanoi. Step through every move, adjust playback speed, and explore up to 16 disks.">
+  <meta name="color-scheme" content="light dark">
+  <title>Hanoi Towers · Slideshow</title>
+  <link rel="icon" href="./icon.png">
+  <link rel="stylesheet" href="./style.css">
+  <script type="module" src="./app.mjs"></script>
+</head>
+<body>
+<main>
+  <header><a class="brand" href="./" aria-label="Hanoi Towers home"><span class="brand-mark" aria-hidden="true">▰</span> HANOI TOWERS</a><span class="edition">HTML5 EDITION</span></header>
+  <section class="intro"><p class="eyebrow">A CLASSIC, ONE MOVE AT A TIME</p><h1>Small moves.<br>Beautiful order.</h1><p class="lead">Watch a stack find its way across three towers.<br>The shortest path, at your own pace.</p></section>
+  <section class="player" aria-label="Tower of Hanoi slideshow">
+    <div class="toolbar"><label class="disk-control">Disks <select id="disks" aria-label="Number of disks"></select></label><div class="speed-control"><label for="speed">Speed <output id="speed-label" for="speed"></output></label><input id="speed" type="range" min="50" max="5000" step="50" value="1000" aria-label="Milliseconds per move"></div><button id="settings-button" class="icon-button" aria-label="Settings" aria-expanded="false" aria-controls="settings">⚙</button><div id="settings" class="settings" hidden><label for="theme">Theme <select id="theme"><option value="system">System</option><option value="light">Light</option><option value="dark">Dark</option></select></label><label class="check"><input id="loop" type="checkbox" checked> Loop playback</label><button id="fullscreen" class="text-button">Enter fullscreen</button></div></div>
+    <div class="scene"><div class="scene-heading"><span id="move-label" role="status" aria-live="off">Ready when you are</span><span class="scene-tag">SHORTEST SOLUTION</span></div><svg id="board" viewBox="0 0 900 430" role="img" aria-labelledby="board-title board-desc"><title id="board-title">Tower of Hanoi</title><desc id="board-desc"></desc><defs><filter id="shadow" x="-30%" y="-50%" width="160%" height="200%"><feDropShadow dx="0" dy="3" stdDeviation="3" flood-opacity=".12"/></filter><marker id="arrowhead" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8" fill="currentColor"/></marker></defs><g id="drawing"></g></svg></div>
+    <div class="timeline"><label class="sr-only" for="progress">Solution step</label><input id="progress" type="range" min="0" max="1023" value="0" aria-valuetext="Step 0 of 1023"><div class="timeline-labels"><span id="step-label">0 / 1,023 moves</span><span id="remaining">17m 3s remaining</span></div></div>
+    <div class="transport"><button id="first" class="icon-button" aria-label="First step" title="First step (Home)">Ⅰ◀</button><button id="previous" class="icon-button" aria-label="Previous step" title="Previous step (Left arrow)">◀</button><button id="play" class="play-button" aria-label="Play" aria-pressed="false"><span id="play-icon" aria-hidden="true">▶</span><span id="play-label">Play</span></button><button id="next" class="icon-button" aria-label="Next step" title="Next step (Right arrow)">▶</button><button id="last" class="icon-button" aria-label="Last step" title="Last step (End)">▶Ⅰ</button></div>
+  </section>
+  <section class="notes"><div><span class="note-number">01</span><h2>One disk at a time</h2><p>Only the top disk can move. A larger disk never rests on a smaller one.</p></div><div><span class="note-number">02</span><h2>Always the shortest path</h2><p><span id="formula">10 disks → 1,023 moves.</span> Every solution takes exactly 2ⁿ − 1 moves.</p></div><div><span class="note-number">03</span><h2>Set your own pace</h2><p>Use the timeline or arrow keys to explore. Press Space to play or pause.</p></div></section>
+  <footer><span>Hanoi Towers Slideshow</span><a href="https://github.com/nanamitm/Hanoi-Towers">Source on GitHub ↗</a></footer>
+</main>
+</body>
+</html>

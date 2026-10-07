@@ -78,3 +78,29 @@ The number of moves grows as `2^n - 1`. At the default speed of one move per sec
 
 - 15 disks: 32,767 moves, about 9 hours
 - 16 disks: 65,535 moves, about 18 hours
+
+## HTML5 Version
+
+Open [Hanoi Towers in your browser](https://nanamitm.github.io/Hanoi-Towers/).
+
+The standalone HTML5 version in `web/` provides 1–16 disks, forward/back controls,
+autoplay (50 ms–5 s per move), loop playback, a seekable timeline, fullscreen,
+and System / Light / Dark themes. Disk count, speed, loop, and theme preferences
+are saved locally when browser storage is available. Playback pauses while the
+page is hidden and resumes when it is visible, without skipping moves.
+
+Use Space to play/pause, Left/Right to step, and Home/End to jump to the first/last
+step when focus is outside the controls. Manual navigation pauses playback.
+Browser fullscreen replaces the desktop application's always-on-top option.
+
+No npm packages or compilation are required. Serve `web/` with any static HTTP
+server; ES modules require HTTP rather than opening `index.html` as a local file.
+Run the model regression tests with Node.js 22:
+
+```sh
+node --test web/tests/model.test.mjs
+```
+
+The `HTML5 Pages` workflow tests the web version and publishes only its static
+assets to GitHub Pages on updates to `web/` on `main`. Pages uses GitHub Actions
+as its publishing source. `version.txt` records the deployed Git commit.
