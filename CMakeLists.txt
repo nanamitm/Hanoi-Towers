@@ -13,9 +13,11 @@ if(COMMAND qt_standard_project_setup)
     qt_standard_project_setup()
 else()
     set(CMAKE_AUTOMOC ON)
-    set(CMAKE_AUTORCC ON)
     set(CMAKE_AUTOUIC ON)
 endif()
+
+# qt_standard_project_setup enables MOC/UIC, but not resource compilation.
+set(CMAKE_AUTORCC ON)
 
 set(APP_RESOURCE_FILES resources/resources.qrc)
 if(WIN32)
