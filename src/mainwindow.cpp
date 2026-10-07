@@ -166,6 +166,7 @@ void MainWindow::connectSignals()
         }
         updateUi();
     });
+    connect(m_loopCheck, &QCheckBox::toggled, this, [this] { updateUi(); });
     connect(m_topMostCheck, &QCheckBox::toggled, this, [this](bool checked) {
         const Qt::WindowFlags baseFlags = windowFlags() & ~Qt::WindowStaysOnTopHint;
         setWindowFlags(checked ? baseFlags | Qt::WindowStaysOnTopHint : baseFlags);
