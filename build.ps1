@@ -8,9 +8,11 @@ $ninja = "C:\Qt\Tools\Ninja\ninja.exe"
 
 $env:Path = "$mingwBin;$ninjaBin;$env:Path"
 
-& $cmake -S . -B build-qt -G Ninja `
+$buildDir = Join-Path $PSScriptRoot 'build-qt'
+
+& $cmake -S $PSScriptRoot -B $buildDir -G Ninja `
     -DCMAKE_MAKE_PROGRAM="$ninja" `
     -DCMAKE_CXX_COMPILER="$mingwBin\g++.exe" `
     -DCMAKE_PREFIX_PATH="$qtRoot"
 
-& $cmake --build build-qt
+& $cmake --build $buildDir
